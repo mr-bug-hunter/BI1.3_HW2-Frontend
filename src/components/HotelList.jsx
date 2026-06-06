@@ -2,7 +2,7 @@ import { useState } from "react"
 import useFetch from "../useFetch"
 
 const HotelList = ()=>{
-    const {successMessage, setSuccessMessage} = useState("")
+    const [successMessage, setSuccessMessage] = useState("")
 
     const {data, loading, error} = useFetch("https://be-4-4-hw-2-backend.vercel.app/hotels")
 
@@ -10,7 +10,7 @@ const HotelList = ()=>{
 
     const handleDelete = async (hotelId)=>{
         try{
-            const response = await fetch(`https://be-4-4-hw-2-backend.vercel.app/hotels/hotels${hotelId}`, 
+            const response = await fetch(`https://be-4-4-hw-2-backend.vercel.app/hotels/hotels/${hotelId}`, 
                 {method : "DELETE"},
             )
             if(!response.ok){
@@ -29,9 +29,9 @@ const HotelList = ()=>{
         <div>
             {loading && <p>please wait Loading data...</p> }
              <h1>Hotel List</h1>
-             {data?.map((hotel)=>(
+             {data?.hotels?.map((hotel)=>(
                 <h2 key={hotel._id}>{hotel.name} 
-                <button onClick={() => handleDelete(movie._id)}>Delete</button> </h2>
+                <button onClick={() => handleDelete(hotel._id)}>Delete</button> </h2>
              ))}
              <p>{successMessage}</p> 
         </div>
