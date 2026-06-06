@@ -30,12 +30,15 @@ const HotelList = ()=>{
     return (
         <div>
             {loading && <p>please wait Loading data...</p> }
+            </hr>
              <h1>Hotel List</h1>
              {data?.map((hotel)=>(
                 <h2 key={hotel._id}>{hotel.name}  
                 <button onClick={() => handleDelete(hotel._id)}> Delete </button> </h2>
              ))}
+                </br>
              {successMessage} </br> 
+                    </hr>
         </div>
     )
 }
