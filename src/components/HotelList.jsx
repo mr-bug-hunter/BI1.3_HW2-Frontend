@@ -12,7 +12,7 @@ console.log("Error:", error)
 
     const handleDelete = async (hotelId)=>{
         try{
-            const response = await fetch(`https://be-4-4-hw-2-backend.vercel.app/hotels/hotels/${hotelId}`, 
+            const response = await fetch(`https://be-4-4-hw-2-backend.vercel.app/hotels/${hotelId}`, 
                 {method : "DELETE"},
             )
             if(!response.ok){
