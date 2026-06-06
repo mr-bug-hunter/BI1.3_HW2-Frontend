@@ -6,9 +6,9 @@ const HotelList = ()=>{
 
     const {data, loading, error} = useFetch("https://be-4-4-hw-2-backend.vercel.app/hotels")
 
-    console.log("Data:", data)
-console.log("Loading:", loading)
-console.log("Error:", error)
+//     console.log("Data:", data)
+// console.log("Loading:", loading)
+// console.log("Error:", error)
 
     const handleDelete = async (hotelId)=>{
         try{
