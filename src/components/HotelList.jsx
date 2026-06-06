@@ -35,7 +35,7 @@ const HotelList = ()=>{
                 <h2 key={hotel._id}>{hotel.name}  
                 <button onClick={() => handleDelete(hotel._id)}> Delete </button> </h2>
              ))}
-             {successMessage} 
+             {successMessage} </br> 
         </div>
     )
 }
