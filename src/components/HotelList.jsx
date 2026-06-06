@@ -31,7 +31,7 @@ console.log("Error:", error)
         <div>
             {loading && <p>please wait Loading data...</p> }
              <h1>Hotel List</h1>
-             {data?.hotels?.map((hotel)=>(
+             {data?.map((hotel)=>(
                 <h2 key={hotel._id}>{hotel.name} 
                 <button onClick={() => handleDelete(hotel._id)}>Delete</button> </h2>
              ))}
